@@ -7,6 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<!-- hello.jsp -->
+	<h1>Hello</h1>
+	<p>안녕하세요.</p>
+	
+	<%
+		int a = 10;
+		int b = 20;
+	%>
+	
+	<p>결과: <%= a + b %></p>
 
 </body>
 </html>
