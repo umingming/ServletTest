@@ -27,4 +27,27 @@
   	<servlet-name>ex01</servlet-name>
   	<url-pattern>/ex01.do</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ex02</servlet-name>
+  	<servlet-class>com.test.servlet.Ex02</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ex02</servlet-name>
+  	<url-pattern>/ex02.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>ex02ok</servlet-name>
+  	<servlet-class>com.test.servlet.Ex02Ok</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ex02ok</servlet-name>
+  	<url-pattern>/ex02ok.do</url-pattern>
+  </servlet-mapping>
+ 
+
+  
 </web-app>
