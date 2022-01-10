@@ -1,0 +1,48 @@
+/* main.css */
+
+@font-face {
+    font-family: 'RixYeoljeongdo_Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/RixYeoljeongdo_Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body, p, div, span, a, table, th, td, input, textarea, option, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, small, button {
+    font-family: 'RixYeoljeongdo_Regular';
+}
+.container {
+	width: 600px;
+}
+.table.vertical th {
+	width: 150px;
+	text-align: center;
+	vertical-align: middle;
+	background: #eee;
+}
+.form-control.short {
+	width: 100px;	
+}
+.form-control.middle {
+	width: 170px;	
+}
+.table.horizontal th {
+	text-align: center;
+	background: #eee;
+}
+.table.horizontal th:nth-child(1) {
+	width: 50px;
+}
+.table.horizontal th:nth-child(2) {
+	width: 100px;
+}
+.table.horizontal th:nth-child(3) {
+	width: 50px;
+}
+.table.horizontal th:nth-child(4) {
+	width: 150px;
+}
+.table.horizontal th:nth-child(5) {
+	width: auto;
+}
+.table.horizontal td {
+	text-align: center;
+}
