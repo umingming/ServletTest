@@ -1,6 +1,14 @@
 package com.test.mvc;
 
+//DTO, Data Transfer Object
+//- 데이터 전송 객체
+//- 택배 상자
+
+//VO, Value Object
+
+//- 레코드 1줄을 담는 상자 역할
 public class AddressDTO {
+	
 	private String seq;
 	private String name;
 	private int age;
@@ -39,4 +47,11 @@ public class AddressDTO {
 	}
 	
 	
+	
 }
+
+
+
+
+
+
