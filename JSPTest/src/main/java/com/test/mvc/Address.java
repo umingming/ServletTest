@@ -1,6 +1,8 @@
 package com.test.mvc;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,9 +18,12 @@ public class Address extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		AddressDAO dao = new AddressDAO();
-		ResultSet rs = dao.list();
-		req.setAttribute("rs", rs);
+//		ResultSet rs = dao.list();
+//		req.setAttribute("rs", rs);
 		
+		ArrayList<AddressDTO> list = dao.list();
+		
+		req.setAttribute("list", list);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/mvc/address.jsp");
 		dispatcher.forward(req, resp);
