@@ -13,7 +13,20 @@
 <body>
    
    <div class="container">
-   	<h1 class="page-header"> <small></small></h1>
+   	<h1 class="page-header">로그인 <small></small></h1>
+   	 <form method="post" action="loginok.jsp">
+   	 <table class="table table-bordered" style="width: 250px;">
+   	 	<tr>
+   	 		<th style="width: 100px;">아이디</th>
+   	 		<td><input type="text" name="id" class="form-control"></td>
+   	 	</tr>
+   	 	<tr>
+   	 		<th style="width: 100px;">암호</th>
+   	 		<td><input type="password" name="pw" class="form-control"></td>
+   	 	</tr>
+   	 </table>
+   	 <input type="submit" value="로그인" class="btn btn-default">
+   	 </form>
    </div>
    <script>
    

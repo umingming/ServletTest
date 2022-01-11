@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-	if (session.getAttribute("id") == null){
-		out.print("<html><head><meta charset='utf-8'></head><body><script>alert('로그인하세요!!');location.href='index.jsp';</script></body></html>");
-		out.close();
-	}
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +14,8 @@
    
    <div class="container">
    	<h1 class="page-header"> <small></small></h1>
+   	<div>이름: <%= request.getAttribute("name") %></div>
+   	<div>나이: <%= request.getAttribute("age") %></div>
    </div>
    <script>
    

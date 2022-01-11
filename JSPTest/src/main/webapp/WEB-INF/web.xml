@@ -9,4 +9,16 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+    <servlet>
+  	<servlet-name>ex02ok</servlet-name>
+  	<servlet-class>com.test.servlet.Ex02Ok</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ex02ok</servlet-name>
+  	<url-pattern>/ex02ok.do</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>
