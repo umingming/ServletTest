@@ -10,7 +10,7 @@
 	.panel {
 		width: 200px;
 		margin: 0 auto;
-		margin-top: 150px;
+		margin-top: 10px;
 		text-align: center;
 	}
 	.info {
@@ -26,19 +26,22 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">회원</div>
 				<div class="panel-body">
-				
 					
+					<c:if test="${not empty id }">
 					<div class="info">
-						<span class="label">lv1</span> hong(홍길동)
+						<span class="label label-primary">lv${lv}</span> ${id}(${name}))
 					</div>
 				
-				
-					<input type="button" value="로그인"
-						class="btn btn-default"
-						onclick="location.href='/code/member/login.do';">
 					<input type="button" value="로그아웃"
 						class="btn btn-default"
 						onclick="location.href='/code/member/logoutok.do';">
+				
+					</c:if>
+					<c:if test="${empty id }">
+					<input type="button" value="로그인"
+						class="btn btn-default"
+						onclick="location.href='/code/member/login.do';">
+					</c:if>
 				</div>
 			</div>
 		</section>

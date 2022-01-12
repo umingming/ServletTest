@@ -9,7 +9,7 @@
 	.panel {
 		width: 200px;
 		margin: 0 auto;
-		margin-top: 150px;
+		margin-top: 10px;
 		text-align: center;
 	}
 	.panel input {
