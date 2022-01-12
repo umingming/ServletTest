@@ -3,7 +3,11 @@ package com.test.jdbc;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-
+/**
+ * 
+ * @author 이유미
+ *
+ */
 public class DBUtil {
 	public static Connection open() {
 		Connection conn = null;
@@ -22,6 +26,13 @@ public class DBUtil {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param host 연결할 데이터베이스 주소
+	 * @param id 연결할 계정명
+	 * @param pw 연결할 계정 암호
+	 * @return 연결된 Connection 클래스
+	 */
 	public static Connection open(String host, String id, String pw) {
 		Connection conn = null;
 		

@@ -27,5 +27,28 @@ public class MemberDAO {
 		}
 		
 	}
+
+	public MemberDTO login(MemberDTO dto) {
+		try {
+			String sql = "select * from tblUser where id=? and pw=?";
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, dto.getId());
+			pstat.setString(2, dto.getPw());
+			
+			rs = pstat.executeQuery();
+			
+			if (rs.next()) {
+				MemberDTO result = new MemberDTO();
+				result.setId(rs.getString("id"));
+				result.setName(rs.getString("name"));
+				result.setLv(rs.getString("lv"));
+				
+				return result;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	}
 	
 }
