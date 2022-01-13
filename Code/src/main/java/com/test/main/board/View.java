@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/board/view.do")
 public class View extends HttpServlet {
@@ -27,9 +28,22 @@ public class View extends HttpServlet {
 		BoardDAO dao = new BoardDAO();
 		
 		//2.3 조회수 증가
-		dao.addReadCount(seq);
+		
+		HttpSession session = req.getSession();
+		
+		if(session.getAttribute("readcount") != null
+				&& session.getAttribute("readcount").toString().equals("n")) {
+			dao.addReadCount(seq);
+			session.setAttribute("readcount", "y");
+		}
+		
 		
 		BoardDTO dto = dao.get(seq);
+		
+		
+		dto.setSubject(dto.getSubject().replace("<", "&lt;").replace(">", "&gt;"));
+		dto.setContent(dto.getContent().replace("<", "&lt;").replace(">", "&gt;"));
+		
 		
 		
 		//2.5

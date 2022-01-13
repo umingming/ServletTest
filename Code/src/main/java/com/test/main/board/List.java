@@ -52,6 +52,7 @@ public class List extends HttpServlet {
 		
 		session.setAttribute("readcount", "n");
 		
+		
 		//2.
 		req.setAttribute("list", list);
 
