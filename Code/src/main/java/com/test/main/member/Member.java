@@ -1,7 +1,6 @@
 package com.test.main.member;
 
 import java.io.IOException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,4 +17,6 @@ public class Member extends HttpServlet {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/member/member.jsp");
 		dispatcher.forward(req, resp);
 	}
+
 }
+

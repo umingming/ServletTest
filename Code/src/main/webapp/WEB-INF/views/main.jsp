@@ -10,7 +10,7 @@
 </style>
 </head>
 <body>
-	<!--  -->
+	<!-- main.jsp -->
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp" %>
 		<section class="content">
@@ -24,3 +24,10 @@
 	</script>
 </body>
 </html>
+
+
+
+
+
+
+

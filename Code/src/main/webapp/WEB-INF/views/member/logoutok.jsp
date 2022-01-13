@@ -11,20 +11,23 @@
 </style>
 </head>
 <body>
-
-	<!--  -->
+	<!-- logoutok.jsp -->
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp" %>
 		<section class="content">
+			
 		</section>
 		<%@include file="/WEB-INF/views/inc/footer.jsp" %>
 	</main>
 	
 	<script>
-		location.href = '/code/member/member.do'	
+		location.href = '/code/member/member.do';
 	</script>
 </body>
 </html>
+
+
+
 
 
 

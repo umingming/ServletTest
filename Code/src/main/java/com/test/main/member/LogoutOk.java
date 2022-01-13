@@ -16,14 +16,25 @@ public class LogoutOk extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		HttpSession session = req.getSession();
-		session.removeAttribute("id");
-		session.removeAttribute("name");
-		session.removeAttribute("lv");
+		//할일
+		//1. 인증 티켓 제거
 		
-		session.invalidate();
+		HttpSession session = req.getSession();
+		
+		//session.removeAttribute("id");
+		//session.removeAttribute("name");
+		//session.removeAttribute("lv");
+		
+		session.invalidate(); //주의!!
+		
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/member/logoutok.jsp");
 		dispatcher.forward(req, resp);
 	}
+
 }
+
+
+
+
+
