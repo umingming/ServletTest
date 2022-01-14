@@ -43,9 +43,15 @@
 			<div class="btns">
 				<input type="button" value="돌아가기"
 					class="btn btn-default"
-					onclick="location.href='/code/board/list.do';">
-				<input type="submit" value="글쓰기"
-					class="btn btn-primary">										
+					onclick="loation.href='/code/board/list.do';">
+				<c:if test="${not empty id && dto.id == id}">
+				<input type="submit" value="수정하기"
+					class="btn btn-primary"										
+					onclick="location.href='/code/board/edit.do?seq=${dto.seq}';">
+				<input type="submit" value="삭제하기"
+					class="btn btn-primary"										
+					onclick="location.href='/code/board/del.do?seq=${dto.seq}';">
+				</c:if>
 			</div>
 			
 			
