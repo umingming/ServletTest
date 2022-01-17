@@ -11,7 +11,7 @@
 </style>
 </head>
 <body>
-	<!-- board/add.jsp -->
+	<!-- board/add.jsp > board/edit.jsp -->
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp" %>
 		<section class="content">
@@ -48,5 +48,10 @@
 	</script>
 </body>
 </html>
+
+
+
+
+
 
 

@@ -25,23 +25,23 @@
 </style>
 </head>
 <body>
-	<!-- member/login.jsp -->
+	<!-- member/login.jsp > board/del.jsp -->
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp" %>
 		<section class="content">
 			
 			<div class="panel panel-default">
-				<div class="panel-heading">삭제</div>
+				<div class="panel-heading">삭제하기</div>
 				<div class="panel-body">
-
-					<input  type="button" value="돌아가기"
+				
+					<input type="button" value="돌아가기"
 						class="btn btn-default"
 						onclick="history.back();">
-									
-					<input  type="button" value="삭제하기"
+					
+					<input type="button" value="삭제하기"
 						class="btn btn-primary"
 						onclick="location.href='/code/board/delok.do?seq=${seq}';">
-									
+					
 				</div>
 			</div>
 			
@@ -54,3 +54,10 @@
 	</script>
 </body>
 </html>
+
+
+
+
+
+
+

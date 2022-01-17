@@ -11,7 +11,7 @@
 </style>
 </head>
 <body>
-	<!-- board/addok.jsp -->
+	<!-- board/addok.jsp > board/editok.jsp > board/delok.jsp -->
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp" %>
 		<section class="content">
@@ -36,3 +36,10 @@
 	</script>
 </body>
 </html>
+
+
+
+
+
+
+
