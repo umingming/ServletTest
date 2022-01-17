@@ -1,27 +1,26 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<style>
-	.title:first-letter {
-		
-		<c:if test="${not empty id}">
-		color: cornflowerblue;
-		</c:if>
-		
-	}
-</style>
 
 <!-- inc/header.jsp -->
-<header class="header">
-
-	<h1 class="title">고구마장터</h1>
-	
-	<ul class="menu">
-		<li onclick="location.href='/code/main.do';">Home</li>
-		<li onclick="location.href='/code/board/list.do';">Board</li>
-		<li onclick="location.href='/code/member/member.do';">Member</li>
-		<li onclick="location.href='/code/etc/?';">Etc</li>
-	</ul>
-
+<header>
+	<div class="innerHeader">
+		<h1 class="logo">
+			<img src="/goguma/asset/img/logo.png"><span>고구마장터</span>
+		</h1>
+		<form method="GET" action="">
+			<input class="search" type="text" placeholder="찾고 싶은 상품을 검색해보세요!">
+			<input class="searchImg" type="image" src="/goguma/asset/img/search.png" alt="">
+		</form>
+		<ul class="menuOption">
+			<li>로그인</li>
+			<li>회원가입</li>
+		</ul>
+		<ul class="menu">
+			<li><img src="/goguma/asset/img/menu1.png">중고거래</li>
+			<li><img src="/goguma/asset/img/menu2.png">커뮤니티</li>
+			<li><img src="/goguma/asset/img/menu3.png">고객센터</li>
+		</ul>
+	</div>
 </header>
 
 
