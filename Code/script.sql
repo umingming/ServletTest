@@ -53,9 +53,12 @@ as
 select 
     seq, subject, id, (select name from tblUser where id = tblBoard.id) as name, regdate, readcount,
     (sysdate - regdate) as isnew,
-    content
+    content,
+    (select count(*) from tblComment where bseq = tblboard.seq) as commentcount
     from tblBoard;
 
+select * from (select rownum as rnum, a.* from (select * from vwBoard order by seq desc) a)
+    where rnum between 1 and 5;
 
 
 delete from tblBoard;
@@ -78,8 +81,16 @@ insert into tblBoard (seq, id, subject, content, regdate, readcount, userip)
 commit;
 
 
+create table tblComment (
+    seq number primary key,
+    id varchar2(30) not null references tblUser(id),
+    content varchar2(1000) not null,
+    regdate date default sysdate not null,
+    bseq number not null references tblBoard(seq)
+);
+
+select * from tblComment;
 
 
-
-
+create sequence seqComment;
 
