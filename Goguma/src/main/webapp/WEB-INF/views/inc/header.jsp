@@ -12,8 +12,16 @@
 			<input class="searchImg" type="image" src="/goguma/asset/img/search.png" alt="">
 		</form>
 		<ul class="menuOption">
+			<c:if test="${empty id}">
 			<li>로그인</li>
 			<li>회원가입</li>
+			</c:if>
+			<c:if test="${not empty id}">
+			<li><img src="/goguma/asset/img/message.png"></li>
+			<li>고구마님</li>
+			<!-- <li>${dto.nickname}님</li> -->
+			<li>로그아웃</li>
+			</c:if>
 		</ul>
 		<ul class="menu">
 			<li><img src="/goguma/asset/img/menu1.png">중고거래</li>

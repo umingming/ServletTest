@@ -63,7 +63,7 @@ header {
 .innerHeader .searchImg {
     position: absolute;
     left: 707px;
-    top: 53px;
+    top: 54px;
     width: 27px;
 }
 .innerHeader .search:focus {
@@ -76,8 +76,12 @@ header {
 }
 .innerHeader .menuOption li{
     float: left;
-    margin-left: 40px;
+    margin-left: 30px;
     font-size: 16px;
+}
+.innerHeader .menuOption img{
+	width: 25px;
+	transform: translateX(25px);
 }
 .innerHeader .menu {
     position: absolute;
