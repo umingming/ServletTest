@@ -113,6 +113,59 @@ header {
 
 
 
+/* footer */
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 170px;
+    background: #FAF7FB;
+    overflow: hidden;
+}
+.innerFooter {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    height: 170px;
+}
+.innerFooter .info {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+.innerFooter .info ul{
+    width: 500px;
+    float: left;
+    color: #757575;
+}
+.innerFooter .info ul:nth-child(2){
+    margin-left: 400px;
+    width: 250px;
+}
+.innerFooter .info li:first-child{
+    font-size: 18px;
+    font-weight: 700;
+    color: #3f3f3f;
+    margin-bottom: 6px;
+}
+.innerFooter .info li{
+    margin-bottom: 1px;
+    font-size: 14px;
+}
+.innerFooter .info span{
+    font-size: 12px;
+    font-weight: 700;
+}
+.innerFooter .policy{
+    position: absolute;
+    left: 30px;
+    bottom: 15px;
+    color: #757575;
+}
+.innerFooter .policy li{
+    font-size: 13px;
+}
+
 
 
 
