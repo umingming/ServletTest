@@ -73,13 +73,12 @@ public class BoardDAO {
 			String where = "";
 			
 			if (map.get("searchmode").equals("y")) {
-				where = String.format("and %s like '%%%s%%'"
-								, map.get("column")
-								, map.get("word").replace("'", "''"));
-			}
-			
-			String sql = String.format("select * from (select rownum as rnum, a.* from (select * from vwBoard order by seq desc) a) where rnum between %s and %s %s order by seq desc", map.get("begin"), map.get("end"), where);
-			
+	            where = String.format("where %s like '%%%s%%'"
+	                        , map.get("column")
+	                        , map.get("word").replace("'", "''"));
+	         }
+	         
+	        String sql = String.format("select * from (select rownum as rnum, a.* from (select * from vwBoard %s order by thread desc) a) where rnum between %s and %s order by thread desc", where, map.get("begin"), map.get("end"));
 			rs = stat.executeQuery(sql);
 			
 			ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
@@ -97,7 +96,8 @@ public class BoardDAO {
 				
 				dto.setIsnew(rs.getDouble("isnew"));
 				
-				dto.setCommentcount(rs.getInt("commentcount"));				
+				dto.setCommentcount(rs.getInt("commentcount"));
+				dto.setDepth(rs.getInt("depth"));
 				
 				list.add(dto);
 			}

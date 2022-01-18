@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import com.test.jdbc.DBUtil;
 
@@ -86,6 +87,31 @@ public class MemberDAO {
 		}
 		
 		return 0;
+	}
+
+	public ArrayList<MemberDTO> list() {
+		try {
+			String sql = "select tblUser.*, (select count(*) from tblBoard where id = tblUser.id) as count, (select count(*) from tblComment where id = tblUser.id) as ccount from tblUser order by lv desc, name asc";
+			
+			ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
+			rs = stat.executeQuery(sql);
+			
+			
+			
+			
+			
+			while (rs.next()) {
+				MemberDTO dto = new MemberDTO();
+				dto.setId(rs.getString("id"));
+				dto.setId(rs.getString("id"));
+				dto.setId(rs.getString("id"));
+				dto.setId(rs.getString("id"));
+				dto.setId(rs.getString("id"));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
 	}
 	
 }

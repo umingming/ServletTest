@@ -33,7 +33,7 @@ public class DBUtil {
 	 * @param pw 연결할 계정 암호
 	 * @return 연결된 Connection 클래스
 	 */
-	public static Connection open(String host, String id, String pw) {
+	public static Connection open(String id, String pw) {
 		Connection conn = null;
 		
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
