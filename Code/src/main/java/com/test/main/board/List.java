@@ -146,30 +146,83 @@ public class List extends HttpServlet {
 //			
 //		}
 		
-		loop = 1;
-		n = ((nowPage - 1) / blockSize) * blockSize + 1;
 		
-		/*
-		<nav>
-		  <ul class="pagination">
-		    <li>
-		      <a href="#" aria-label="Previous">
-		        <span aria-hidden="true">&laquo;</span>
-		      </a>
-		    </li>
-		    <li><a href="#">1</a></li>
-		    <li><a href="#">2</a></li>
-		    <li><a href="#">3</a></li>
-		    <li><a href="#">4</a></li>
-		    <li><a href="#">5</a></li>
-		    <li>
-		      <a href="#" aria-label="Next">
-		        <span aria-hidden="true">&raquo;</span>
-		      </a>
-		    </li>
-		  </ul>
-		</nav>
-		 */
+		//list.do?page=1
+		//1 2 3 4 5 6 7 8 9 10
+		
+		//list.do?page=3
+		//1 2 3 4 5 6 7 8 9 10
+		
+		//list.do?page=10
+		//1 2 3 4 5 6 7 8 9 10
+		
+		//list.do?page=11
+		//11 12 13 14 15 16 17 18 19 20
+		
+		loop = 1; //루프변수(while)
+		n = ((nowPage - 1) / blockSize) * blockSize + 1; //페이지 번호
+		
+		
+		
+		pagebar += "<nav><ul class=\"pagination\">";
+		
+		
+		//이전 10페이지
+//		if (n == 1) {
+//			pagebar += String.format(" <a href='#!'>[이전 %d페이지]</a> ", blockSize);
+//		} else {
+//			pagebar += String.format(" <a href='/code/board/list.do?page=%d'>[이전 %d페이지]</a> ", n-1, blockSize);
+//		}
+		
+		if (n == 1) {
+			pagebar += String.format("<li class='disabled'><a href='#!' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>");
+		} else {
+			pagebar += String.format("<li><a href='/code/board/list.do?page=%d' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>", n-1);
+		}
+		
+		
+		
+		
+//		while (!(loop > blockSize || n > totalPage)) {
+//			
+//			if (n == nowPage) {
+//				pagebar += String.format(" <a href='#!' style='color:tomato;'>%d</a> ", n);
+//			} else {
+//				pagebar += String.format(" <a href='/code/board/list.do?page=%d'>%d</a> ", n, n);
+//			}			
+//			
+//			loop++;
+//			n++;
+//		}
+		
+		
+		while (!(loop > blockSize || n > totalPage)) {
+			
+			if (n == nowPage) {
+				pagebar += String.format("<li class='active'><a href='#!'>%d</a></li>", n);
+			} else {
+				pagebar += String.format("<li><a href='/code/board/list.do?page=%d'>%d</a></li>", n, n);
+			}			
+			
+			loop++;
+			n++;
+		}
+		
+		
+		//다음 10페이지
+//		if (n > totalPage) {
+//			pagebar += String.format(" <a href='#!'>[다음 %d페이지]</a> ", blockSize);
+//		} else {
+//			pagebar += String.format(" <a href='/code/board/list.do?page=%d'>[다음 %d페이지]</a> ", n, blockSize);
+//		}
+		
+		if (n > totalPage) {
+			pagebar += String.format("<li class='disabled'><a href='#!' aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>");
+		} else {
+			pagebar += String.format("<li><a href='/code/board/list.do?page=%d' aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>", n);
+		}
+		
+		pagebar += "</ul></nav>";
 		
 		
 		//2.
@@ -177,6 +230,7 @@ public class List extends HttpServlet {
 		req.setAttribute("map", map);
 		
 		req.setAttribute("pagebar", pagebar);
+		req.setAttribute("nowPage", nowPage);
 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/board/list.jsp");
 		dispatcher.forward(req, resp);

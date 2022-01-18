@@ -40,6 +40,7 @@ public class View extends HttpServlet {
 		
 		//1.
 		String seq = req.getParameter("seq");
+		String page = req.getParameter("page");
 		
 		//2.
 		BoardDAO dao = new BoardDAO();
@@ -107,6 +108,9 @@ public class View extends HttpServlet {
 		req.setAttribute("word", word);
 		
 		req.setAttribute("clist", clist);
+		
+		req.setAttribute("page", page);
+		
 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/board/view.jsp");
 		dispatcher.forward(req, resp);
