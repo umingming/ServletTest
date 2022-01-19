@@ -19,14 +19,20 @@ public class Etc extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		//EtcDAO dao;		
 		MemberDAO dao = new MemberDAO();
 		
 		ArrayList<MemberDTO> list = dao.list();
 		
-		req.setAttribute("dao", dao);
+		req.setAttribute("list", list);
 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/etc/etc.jsp");
 		dispatcher.forward(req, resp);
 	}
+
 }
+
+
+
+
 

@@ -8,6 +8,8 @@ public class MemberDTO {
 	private String lv;
 	
 	private int count;
+	private int ccount;
+	
 	public int getCount() {
 		return count;
 	}
@@ -20,8 +22,6 @@ public class MemberDTO {
 	public void setCcount(int ccount) {
 		this.ccount = ccount;
 	}
-	private int ccount;
-	
 	public String getId() {
 		return id;
 	}

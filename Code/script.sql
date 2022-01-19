@@ -59,6 +59,8 @@ select
     (select count(*) from tblComment where bseq = tblBoard.seq) as commentcount,
     thread, depth
     from tblBoard;
+    
+select * from vwBoard;
 
 
 -- 페이징 작업
@@ -104,8 +106,10 @@ create table tblComment (
 );
 
 create sequence seqComment;
+drop sequence seqComment;
+drop sequence seqBoard;
 
-insert into tblComment (seq, id, content, regdate, bseq) values (seqComment.nextVal, 'hong', '댓글입니다.', default, 25);
+insert into tblComment (seq, id, content, regdate, bseq) values (seqComment.nextVal, 'hong', '댓글입니다.', default, 16);
 
 select * from tblComment where bseq = 25; -- 어떤 글을 볼때 그 글에 달려있는 댓글 목록
 
@@ -136,8 +140,8 @@ create table tblBoard (
     regdate date default sysdate not null,              --작성시간
     readcount number default 0 not null,                --조회수
     userip varchar2(15) not null,                       --접속IP
-    thread number not null,                             --계층형 게시판
-    depth number not null                               --계층형 게시판
+    thread number default 1000 not null,                             --계층형 게시판
+    depth number default 1000 not null                               --계층형 게시판
 );
 
 
@@ -156,9 +160,9 @@ select tblUser.*,
     (select count(*) from tblComment where id = tblUser.id) as ccount 
 from tblUser order by lv desc, name asc;
 
+select tblBoard.*, (select name from tblUser where id = tblBoard.id) as name from tblBoard;
 
-
-
+select * from (select rownum as rnum, a.* from (select * from vwBoard order by thread desc) a) order by thread desc;
 
 
 
