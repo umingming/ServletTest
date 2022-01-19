@@ -11,10 +11,10 @@ import java.sql.DriverManager;
 public class DBUtil {
 	public static Connection open() {
 		Connection conn = null;
-		
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String id = "goguma";
-		String pw = "java1234";
+
+		String url = "jdbc:oracle:thin:@goguma_medium?TNS_ADMIN=C://Wallet_goguma";
+		String id = "admin";
+		String pw = "Goguma970928";
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
