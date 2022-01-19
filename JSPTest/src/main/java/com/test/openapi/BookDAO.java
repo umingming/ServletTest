@@ -165,4 +165,43 @@ public class BookDAO {
         }
     }
 
+	public HashMap<String, Integer> getTotalCount(String query) {
+		String clientId = "jApoOUuCThh35l34eRvf"; // 애플리케이션 클라이언트 아이디값"
+		String clientSecret = "2eDSq5c0Dh"; // 애플리케이션 클라이언트 시크릿값"
+		
+		String text = null;
+		try {
+			text = URLEncoder.encode(query, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			throw new RuntimeException("검색어 인코딩 실패", e);
+		}
+		
+//		String apiURL = "https://openapi.naver.com/v1/search/blog?query=" + text; // json 결과
+		String apiURL = "https://openapi.naver.com/v1/search/book.xml?query="+ text;
+		// // xml 결과
+		
+		Map<String, String> requestHeaders = new HashMap<>();
+		requestHeaders.put("X-Naver-Client-Id", clientId);
+		requestHeaders.put("X-Naver-Client-Secret", clientSecret);
+		String responseBody = get(apiURL, requestHeaders);
+		
+		try {
+
+	         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	         DocumentBuilder builder = factory.newDocumentBuilder();
+	         Document document = builder.parse(new InputSource(new StringReader(responseBody)));
+	         
+	         //문서 루트 태그
+	         Element rss = document.getDocumentElement();
+	         
+	      } catch (Exception e) {
+	         System.out.println("BookDAO.list()");
+	         e.printStackTrace();
+	      }
+
+		
+		
+		return null;
+	}
+
 }

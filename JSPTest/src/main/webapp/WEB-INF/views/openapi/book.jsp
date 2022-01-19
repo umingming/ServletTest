@@ -39,7 +39,7 @@
    		<c:forEach items="${list}" var="dto">
    		<tr>
    			<td><img src="${dto.image}"></td>
-   			<td>${dto.title}</td>
+   			<td><a href="${dto.link}" target="_blank">${dto.title}</a></td>
    			<td>${dto.author}</td>
    			<td>${dto.publisher}</td>
    			<td>${dto.pubdate}</td>

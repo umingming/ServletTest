@@ -2,6 +2,7 @@ package com.test.openapi;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,11 +19,13 @@ public class Book extends HttpServlet {
 		
 		String query = req.getParameter("query");
 		
-		if(query != null && query.equals("")) {
+		if(query != null && !query.equals("")) {
 			BookDAO dao = new BookDAO();
 			ArrayList<BookDTO> list = dao.list(query);
+			HashMap<String,Integer> map = dao.getTotalCount(query);
 			req.setAttribute("list", list);
 			req.setAttribute("query", query);
+			req.setAttribute("map", map);
 		}
 		
 
