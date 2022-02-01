@@ -35,4 +35,19 @@ public class AjaxDAO {
 		return 0;
 	}
 
+	public String get(String seq) {
+		try {
+			String sql = "select subject from tblBoard where seq = " + seq;
+			rs = stat.executeQuery(sql);
+			
+			if(rs.next()) {
+				return rs.getString("subject");
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	
+		return null;
+	}
+
 }

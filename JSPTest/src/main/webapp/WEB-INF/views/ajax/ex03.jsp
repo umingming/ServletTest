@@ -44,8 +44,9 @@
 	  $.ajax({
 		  type: 'GET',
 		  url: '/jsp/ajax/ex03data.do',
-		  success: function(result) {
-			  $('.txt1').text('@'+result+'@');
+		  data: 'seq=' + $('#seq').val(),
+		  success: function(subject) {
+			  $('.txt2').text(subject);
 		  }
 	  }); 
    });
