@@ -26,10 +26,27 @@
    	</div>
    	<input type="text" id="seq" class="form-control">
    	<input type="button" value="데이터 가져오기" id="btn2">
+   	
+   	<h2>보내기X, 가져오기O + 다중 데이터(1컬럼, n행)</h2>
+   	<div class="well txt3">
+   	</div>
+   	<input type="button" value="데이터 가져오기" id="btn3">
+   	
+   	
+   	
    </div>
    
    <script>
    
+   $('#btn3').click(() => {
+	  $.ajax({
+		  type: 'GET',
+		  url: '/jsp/ajax/ex03data.do',
+		  success: function(result) {
+			  $('.txt3').text(result);
+		  }
+	  }); 
+   });
    $('#btn1').click(() => {
 	  $.ajax({
 		  type: 'GET',

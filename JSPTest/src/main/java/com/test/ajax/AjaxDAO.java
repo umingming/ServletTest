@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import com.test.jdbc.DBUtil;
 
@@ -47,6 +48,21 @@ public class AjaxDAO {
 			// TODO: handle exception
 		}
 	
+		return null;
+	}
+
+	public ArrayList<String> list() {
+		try {
+			String sql = "select subject from tblBoard";
+			rs =stat.executeQuery(sql);
+			ArrayList<String> list = new ArrayList<String>();
+			while(rs.next()) {
+				list.add(rs.getString("subject"));
+			}
+			return list;
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		return null;
 	}
 
